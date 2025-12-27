@@ -1,0 +1,154 @@
+.hero {
+  padding-top: 142px;
+  background-color: var(--light-grey);
+    border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.hero__wrapper {
+  display: flex;
+margin-bottom: 60px;
+}
+
+.hero__sell {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 40%;
+  margin-right: 12%;
+  padding: 54px 0;
+}
+
+.hero__descr {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  max-width: 585px;
+  font-weight: 400;
+  font-size: clamp(16px, 2vw, 32px);
+/* font-size: 32px; */
+}
+
+/* .hero__descr::before {
+  content: url('../img/smile.png');
+  position: absolute;
+  right: 0;
+  height: 72px;
+} */
+
+.hero__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  font-weight: 500;
+  font-size: clamp(14px, 1.5vw, 2vw);
+text-transform: uppercase;
+border-radius: 20px;
+background-color: var(--orange-juice);
+color: var(--white);
+transition: transform 0.26s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hero__btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.hero-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.hero-list__item {
+    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    margin: 0 20px;
+  grid-column: 2 span;
+  padding: 21px 25px;
+  text-align: center;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: var(--white);
+  transition: background 0.3s;
+}
+
+.hero-list__link {
+
+font-weight: 400;
+font-size: 20px;
+color: var(--grey);
+transition: color 0.3s ease-in-out;
+}
+
+.hero-list__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-list__link:hover{
+color:var(--orange-juice);
+}
+
+.hero__picture {
+  position: relative;
+}
+
+.hero__picture::after, 
+.hero__picture::before {
+  content: url('../img/Star.png');
+  position: absolute;
+    animation-duration: 3.6s; 
+    animation-iteration-count: infinite;
+}
+
+.hero__picture::after {
+  top: 70%;
+  left: -24px;
+  animation-name: spin;
+}
+
+.hero__picture::before {
+  top: 22%;
+  right: -24px;
+  animation-name: spin2;
+}
+
+@media(max-width: 1400px) {
+  .hero {
+    padding-top: 182px;
+  }
+  
+  .hero__sell {
+    padding: 0;
+
+  }
+}
+
+@media(max-width: 800px) {
+  .hero__wrapper {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+.hero__sell {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+  .hero-list__item {
+    padding: 10px 20px;
+  } 
+
+  .hero-list__link {
+    font-size: 16px;
+  }
+}

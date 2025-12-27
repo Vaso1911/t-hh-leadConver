@@ -1,0 +1,130 @@
+.target-leads {
+  padding: 120px 0;
+}
+
+.target-leads__title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+    margin-bottom: 40px;
+  text-align: center;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 108%;
+}
+
+.tl-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.tl-list__item {
+  grid-column: 6 span;
+
+}
+
+.tl-card {
+  border-radius: 30px;
+  height: 100%;
+  background-color: var(--light-grey);
+  overflow: hidden;
+}
+
+.tl-card__link {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    height: inherit;
+    z-index: 2;
+    transition: background 0.3s ease-in-out;
+}
+
+.tl-card__link:hover {
+  background-color: var(--orange-juice);
+}
+
+.tl-card__link:hover .tl-card__title {
+  color: var(--white);
+}
+
+.tl-card__link:hover .tl-card__descr {
+  color: var(--white);
+}
+
+.tl-card__info {
+  position: relative;
+padding: 60px 0 20px 40px;
+  flex: 1;
+}
+
+.tl-card__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: clamp(20px, 1.8vw, 2.5vw);
+  color: var(--dark-grey);
+}
+
+.tl-list__item:nth-child(3) .tl-card__title {
+  max-width: 340px;
+}
+
+.tl-card__info::before {
+  content: url('../img/smallStar.png');
+  position: absolute;
+  right: 20%;
+  height: 44px;
+  animation-duration: 3.6s;
+  animation-iteration-count: infinite;
+  animation-name: spin;
+}
+
+.tl-card__descr {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(14px, 1.3vw, 2vw);
+  color: var(--grey);
+}
+
+.tl-card__svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media(max-width: 1400px) {
+  .tl-card__info {
+    padding: 20px 0 20px 20px;
+  }
+
+  .tl-card__svg,
+  .tl-card__picture {
+    width: 50%;
+  }
+}
+
+@media(max-width: 800px) {
+.target-leads {
+padding: 40px 0;
+}
+
+  .target-leads__title{
+font-size: 6vw;
+  }
+
+  .tl-list__item {
+    grid-column: 12 span;
+  }
+    .tl-card__img,
+    .tl-card__picture {
+    width: 100%;
+  }
+
+  .tl-card__svg {
+    display: none;
+  }
+}

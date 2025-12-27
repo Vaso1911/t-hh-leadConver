@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Montserrat", sans-serif;
+
+  --content-width: 1780px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+	--light-grey: #f6f6f6;
+	--orange-juice: #f60;
+	--white: #fff;
+	--dark-grey: #2d2d2d;
+	--grey: #808080;
+  --blueberry: #8a38d6;
+	--grey2: #c0c0c0;
+}
+
+.page {
+  height: 100%;
+  font-family: var(--font-family);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 360px;
+  min-height: 100%;
+  color: var(--dark-grey);
+}
+
+picture {
+  display: flex;
+font-size: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.accent-color {
+  color: var(--orange-juice);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--second-family);
+font-weight: 700;
+font-size: clamp(32px, 4vw, 80px);
+line-height: 100%;
+}
+
+
+.marquee-container {
+  display: flex;
+  animation: marquee linear infinite;
+  min-width: 5800%;
+}
+
+.marquee-set {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+  @keyframes menuMove {
+      from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+  }
+
+*:focus {
+  outline: 0;
+}
+
+*:focus-visible {
+  outline: 1px dashed var(--blueberry);
+  outline-offset: 2px;
+}
